@@ -1,0 +1,16 @@
+{
+  "name": "managed-chatkit",
+  "private": true,
+  "scripts": {
+    "dev": "npm run verify-env && concurrently --kill-others-on-fail --names backend,frontend \"npm run backend\" \"npm run frontend\"",
+    "verify-env": "node scripts/verify-env.js",
+    "frontend": "npm --prefix frontend install && npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "frontend:lint": "npm --prefix frontend install && npm --prefix frontend run lint",
+    "backend": "./backend/scripts/run.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
+
