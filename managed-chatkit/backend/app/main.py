@@ -178,3 +178,11 @@ def parse_json(response: httpx.Response) -> Mapping[str, Any]:
         return parsed if isinstance(parsed, Mapping) else {}
     except (json.JSONDecodeError, httpx.DecodingError):
         return {}
+    
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # vercel url
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
