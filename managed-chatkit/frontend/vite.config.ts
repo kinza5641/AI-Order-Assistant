@@ -3,7 +3,7 @@ import * as path from "node:path";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 
-const apiTarget = import.meta.env.VITE_API_URL;
+const apiTarget = process.env.VITE_API_URL || "http://localhost:8000";
 
 export default defineConfig({
   // Allow env files to live one level above the frontend directory
