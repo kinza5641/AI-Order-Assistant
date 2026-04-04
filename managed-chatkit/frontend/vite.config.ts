@@ -1,8 +1,9 @@
+/// <reference types="vite/client" />
 import * as path from "node:path";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 
-const apiTarget = process.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const apiTarget = import.meta.env.VITE_API_URL;
 
 export default defineConfig({
   // Allow env files to live one level above the frontend directory
