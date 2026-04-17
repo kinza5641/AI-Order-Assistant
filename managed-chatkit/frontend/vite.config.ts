@@ -3,7 +3,7 @@ import * as path from "node:path";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 
-const apiTarget = process.env.VITE_API_URl ?? "https://ai-order-assistant.onrender.com";
+const apiTarget = process.env.VITE_API_URL ?? "127 0.0.1:8000";
 
 export default defineConfig({
   // Allow env files to live one level above the frontend directory
